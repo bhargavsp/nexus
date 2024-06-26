@@ -12,3 +12,5 @@ Based on the version type in the maven file under the groupID, artifact, packagi
 ### how to update the release package with the same version number
 firstly once we have created the build artificat for the release, the next builds fails for the same version as it throws the 400 erro code, because the nexus doesnt store the artifact with the same version number as it cant update, the how to update the artificate if we got into some issue <br/>
 go to server administration in the nexus and click on specific repository settings and enale ***redeploy*** as deployment policy 
+
+### roles and resposibilites of devops engineer in the nexus?

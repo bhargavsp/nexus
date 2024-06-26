@@ -49,3 +49,18 @@ bin | binary files
 ### integrate nexus repos with maven project
 
 ### upload artifacts into nexus repo
+
+**NOTE:**
+**Basically we dont connect the central repo, remote repo to our main *maven repo server*, we use the proxy repository installed to xonnect externally and then connect that server to the internal maven server to download the packages**
+
+### Proxy repository 
+![image](https://github.com/bhargavsp/nexus/assets/45779321/13bda18a-5b95-4dfe-948b-911fad892dee)
+1. we need to configure the central repo URL when creting the remote proxy repo
+2. select the maven2 (proxy) and giv ehte remote storage location as the maven central repo
+3. configure that in the seting.xml file in the maven config dir under ht mirror tag
+
+### where we can see all the cutom maven repo
+In the maven user home in the mavencustomlocalrepo directory 
+
+### Group repository
+we create maven2(group) it contains mixxed (release, snapshot) and configure the remote and proxy repos in the member repositories and create the group repository. Later update the pom.xml to configure that to group URL in the repositorie tag and build it

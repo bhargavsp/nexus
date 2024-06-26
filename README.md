@@ -37,6 +37,12 @@ lib |
 bin | binary files
 
 ### create the repo in nexus
+1. click on the setting icon *server administration and configuration* and navigate to the settings ![image](https://github.com/bhargavsp/nexus/assets/45779321/47589a8f-b07a-4b28-914f-c60dcdadc2a5)
+2. click on create repository ![image](https://github.com/bhargavsp/nexus/assets/45779321/f2d36c7b-d5a3-4d65-8b4e-a7fbb48049f3)
+3. select the recipe we want to create the repository
+4. we have ***snapshot and release*** option while creating the repo
+5. later configure that to the pom.xml file in the maven to access the nexus and to store the artifacts in the *distributionManagement* tag ![image](https://github.com/bhargavsp/nexus/assets/45779321/604bd03c-fb6b-4386-be90-de34611bdc7d)
+
 
 ### integrate nexus repos with maven project
 

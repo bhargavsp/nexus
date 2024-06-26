@@ -11,10 +11,33 @@ Nexus is an artifactory REPO
 2.  4 gb ram minimum
 
 ### configuring the nexus
-1. get the latest vesion from https://help.sonatype.com/en/download.html
-2. download in OPT directory
-3. create the *nexus* user (useradd nexus)
-4. give sudoers permissions (visudo file) nexus ALL=(ALL) NOPASSWD: ALL
-5. change the owner abd group for the files nexus and sonatype-work
-6. 
- 
+|||
+|:---:|:---:|
+get the latest vesion from | https://help.sonatype.com/en/download.html
+download in OPT directory |
+create the *nexus* user |(useradd nexus)
+give sudoers permissions | (visudo file) nexus ALL=(ALL) NOPASSWD: ALL
+change the owner and group for the files nexus and sonatype-work |
+open nexus.rc file in bin and update the file change to | run_as_user="nexus", we are going to run the nexus server with the *nexus user*
+run the nexus as a service | sudo ln -s /opt/nexus-3.15.2-01/bin/nexus /etc/init.d/nexus
+switch to the nexus user | sudo su - nexus
+chang ethe IP and port of nexus | sudo vi /opt/nexus/etc/nexus-default.properties
+restrt the service | sudo service nexus restart
+enable the nexus user | sudo systemctl enable nexus
+start the nexus user | sudo systemctl start nexus
+status the nexus user | sudo systemctl status nexus
+login to nexus user | sudo cat /opt/sonatype-work/nexus3/admin.password
+login password for nexus upto 3.15 version | username is admin pass: admin123 but later version the passwprd is stored in the admin.password file
+
+### what are the direcotries in nexus
+|name|usage|
+|:---:|:---:|
+etc | configurations files
+lib |
+bin | binary files
+
+### create the repo in nexus
+
+### integrate nexus repos with maven project
+
+### upload artifacts into nexus repo

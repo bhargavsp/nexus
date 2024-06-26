@@ -44,6 +44,8 @@ bin | binary files
 5. later configure that to the pom.xml file in the maven to access the nexus and to store the artifacts in the *distributionManagement* tag ![image](https://github.com/bhargavsp/nexus/assets/45779321/604bd03c-fb6b-4386-be90-de34611bdc7d)
 
 
+### all the development packages are stored in the snapshot repository and all the production packages are stored in the release repository
+
 ### integrate nexus repos with maven project
 
 ### upload artifacts into nexus repo

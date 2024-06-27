@@ -13,11 +13,13 @@ Nexus is an artifactory REPO
 ### configuring the nexus
 |||
 |:---:|:---:|
+install java 8 | java 11 doesnt work with nexus https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/amazon-linux-install.html
 get the latest vesion from | https://help.sonatype.com/en/download.html
 download in OPT directory |
+change the name of sonarqube for further use and simplicity | mv /opt/nexus-3.15.2-01 /opt/nexus
 create the *nexus* user |(useradd nexus)
 give sudoers permissions | (visudo file) nexus ALL=(ALL) NOPASSWD: ALL
-change the owner and group for the files nexus and sonatype-work |
+change the owner and group for the files nexus and sonatype-work | chown -R nexus:nexus /opt/nexus, chown -R nexus:nexus /opt/sonatype-work, chmod -R 775 /opt/nexus, chmod -R 775 /opt/sonatype-work
 open nexus.rc file in bin and update the file change to | run_as_user="nexus", we are going to run the nexus server with the *nexus user*
 run the nexus as a service | sudo ln -s /opt/nexus-3.15.2-01/bin/nexus /etc/init.d/nexus
 switch to the nexus user | sudo su - nexus
@@ -26,8 +28,9 @@ restrt the service | sudo service nexus restart
 enable the nexus user | sudo systemctl enable nexus
 start the nexus user | sudo systemctl start nexus
 status the nexus user | sudo systemctl status nexus
-login to nexus user | sudo cat /opt/sonatype-work/nexus3/admin.password
-login password for nexus upto 3.15 version | username is admin pass: admin123 but later version the passwprd is stored in the admin.password file
+ login from browser 8081 | nexus
+signin to nexus user | sudo cat /opt/sonatype-work/nexus3/admin.password
+login password for nexus upto 3.15 version | `username is admin pass: admin123` but later version the password is stored in the admin.password file
 
 ### what are the direcotries in nexus
 |name|usage|

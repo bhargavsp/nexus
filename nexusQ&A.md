@@ -14,3 +14,7 @@ firstly once we have created the build artificat for the release, the next build
 go to server administration in the nexus and click on specific repository settings and enale ***redeploy*** as deployment policy 
 
 ### roles and resposibilites of devops engineer in the nexus?
+
+
+### why do we use the chkconfig on the run_as_service setup in nexus?
+follow the link: https://help.sonatype.com/en/run-as-a-service.html#chkconfig
